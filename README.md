@@ -4,9 +4,16 @@ A chatbot that lets you **upload a PDF and chat with it**, similar to ChatGPT or
 
 Built with **Python, Streamlit, LangChain, ChromaDB and Google Gemini** using Retrieval-Augmented Generation (RAG).
 
+## 🌐 Live Demo
+
+**👉 [https://pdf-rag-chatbot-ipkl.onrender.com](https://pdf-rag-chatbot-ipkl.onrender.com/)**
+
+> **Note:** The app is hosted on a free tier. If it has been idle, the first load can take around a minute while the server wakes up. The free Gemini API also has a daily request limit, so if you see a quota message, please try again later.
+
 ---
 
 ## 📌 Table of Contents
+- [Live Demo](#-live-demo)
 - [Features](#-features)
 - [Tech Stack](#-tech-stack)
 - [How It Works](#-how-it-works)
@@ -15,6 +22,7 @@ Built with **Python, Streamlit, LangChain, ChromaDB and Google Gemini** using Re
 - [Configuration](#-configuration)
 - [Usage](#-usage)
 - [Model Fallback](#-model-fallback)
+- [Deployment](#-deployment)
 - [Troubleshooting](#-troubleshooting)
 - [Limitations](#-limitations)
 - [Future Improvements](#-future-improvements)
@@ -31,7 +39,7 @@ Built with **Python, Streamlit, LangChain, ChromaDB and Google Gemini** using Re
 - **Process once, ask many**: the PDF is read and indexed only once per upload, not on every question
 - **Automatic model fallback**: if one Gemini model's free quota runs out, the app tries the next model in the list
 - **Clear chat** button, and the chat resets automatically when a new PDF is uploaded
-- **Secure configuration**: the API key is kept in a `.env` file that is never committed to GitHub
+- **Secure configuration**: the API key is kept in environment variables and is never committed to GitHub
 
 ---
 
@@ -47,6 +55,7 @@ Built with **Python, Streamlit, LangChain, ChromaDB and Google Gemini** using Re
 | Vector database | ChromaDB |
 | Answer generation | Google Gemini (chat models) |
 | Configuration | python-dotenv |
+| Hosting | Render |
 
 ---
 
@@ -142,7 +151,7 @@ The app opens in your browser at `http://localhost:8501`.
 
 ## ⚙️ Configuration
 
-All settings are read from the `.env` file.
+All settings are read from the `.env` file (or from environment variables when deployed).
 
 | Variable | Required | Description |
 |---|---|---|
@@ -182,6 +191,20 @@ Free Gemini API keys have a daily request limit per model. To keep the chatbot w
 
 ---
 
+## ☁️ Deployment
+
+The app is deployed on **Render** as a Web Service.
+
+| Setting | Value |
+|---|---|
+| Build command | `pip install -r requirements.txt` |
+| Start command | `streamlit run app.py --server.port $PORT --server.address 0.0.0.0` |
+| Environment variables | `GOOGLE_API_KEY`, `PYTHON_VERSION=3.11.9` |
+
+The API key is stored in Render's environment variables and is never stored in the repository.
+
+---
+
 ## 🧰 Troubleshooting
 
 | Problem | Cause | Solution |
@@ -190,6 +213,7 @@ Free Gemini API keys have a daily request limit per model. To keep the chatbot w
 | `429 RESOURCE_EXHAUSTED` | The free daily quota for that model is used up | Wait for the quota to reset, create a key in a new Google Cloud project, or add more models to `GEMINI_MODELS` |
 | `404 NOT_FOUND` for a model | The model name is outdated or unavailable for your account | Check the available model names in Google AI Studio and update `GEMINI_MODELS` |
 | New key does not work | The app was not restarted | Stop the app with `Ctrl + C` and run `streamlit run app.py` again |
+| Live demo is slow to open | Free hosting spins down when idle | Wait about a minute for the server to wake up |
 | Answer says "I could not find the answer in the PDF" | The information is not in the document, or the PDF is a scanned image without text | Try rephrasing, or use a PDF with selectable text |
 
 ---
@@ -210,7 +234,6 @@ Free Gemini API keys have a daily request limit per model. To keep the chatbot w
 - Persistent vector storage
 - Streaming responses for a typing effect
 - LLM-based question rewriting for more accurate follow-ups
-- Deployment on Streamlit Community Cloud
 
 ---
 
@@ -220,3 +243,4 @@ Free Gemini API keys have a daily request limit per model. To keep the chatbot w
 Python Developer | B.E. Information Technology (Honours - Data Science)
 
 GitHub: [@kalevaishnavi04](https://github.com/kalevaishnavi04)
+Live Demo: [pdf-rag-chatbot-ipkl.onrender.com](https://pdf-rag-chatbot-ipkl.onrender.com/)
