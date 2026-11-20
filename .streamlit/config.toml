@@ -1,0 +1,34 @@
+# Paper-and-ink theme. Light and dark are both defined, so users can switch
+# from the app menu (top-right) > Settings > Theme.
+[theme]
+base = "light"
+font = "Figtree:https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap"
+headingFont = "Literata:https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600&display=swap"
+codeFont = "'JetBrains Mono':https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
+baseRadius = "large"
+buttonRadius = "full"
+showWidgetBorder = true
+showSidebarBorder = true
+linkUnderline = false
+
+[theme.light]
+primaryColor = "#2F4B9A"
+backgroundColor = "#FAF8F3"
+secondaryBackgroundColor = "#F0EDE4"
+textColor = "#1B1F2A"
+borderColor = "#E0DBCD"
+
+[theme.light.sidebar]
+backgroundColor = "#F3F0E8"
+secondaryBackgroundColor = "#E8E4D8"
+
+[theme.dark]
+primaryColor = "#4F63D2"
+backgroundColor = "#14161B"
+secondaryBackgroundColor = "#1D2028"
+textColor = "#E9E7E2"
+borderColor = "#2D313B"
+
+[theme.dark.sidebar]
+backgroundColor = "#101217"
+secondaryBackgroundColor = "#1A1D24"
