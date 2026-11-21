@@ -16,29 +16,34 @@
 
 </div>
 
+## 🌐 Live Demo
+
+**👉 [https://pdf-rag-chatbot-ipkl.onrender.com](https://pdf-rag-chatbot-ipkl.onrender.com/)**
+
 > The live demo runs on a free tier. If it has been idle, the first load can take around a minute. The free Gemini API also has daily limits, so if you see a quota message, try again later.
 
 ---
 
 ## 📑 Table of Contents
 
-1. [About the Project](#-about-the-project)
-2. [Screenshots](#-screenshots)
-3. [Features](#-features)
-4. [System Architecture](#-system-architecture)
-5. [How RAG Works Here](#-how-rag-works-here)
-6. [Tech Stack](#-tech-stack)
-7. [Project Structure](#-project-structure)
-8. [Installation and Setup](#-installation-and-setup)
-9. [Configuration](#-configuration)
-10. [Premium Plans and Payments](#-premium-plans-and-payments)
-11. [Deployment (Render)](#-deployment-render)
-12. [Testing](#-testing)
-13. [Security and Privacy](#-security-and-privacy)
-14. [Design Decisions](#-design-decisions)
-15. [Limitations](#-limitations)
-16. [Roadmap](#-roadmap)
-17. [Author](#-author)
+1. [Live Demo](#-live-demo)
+2. [About the Project](#-about-the-project)
+3. [Screenshots](#-screenshots)
+4. [Features](#-features)
+5. [System Architecture](#-system-architecture)
+6. [How RAG Works Here](#-how-rag-works-here)
+7. [Tech Stack](#-tech-stack)
+8. [Project Structure](#-project-structure)
+9. [Installation and Setup](#-installation-and-setup)
+10. [Configuration](#-configuration)
+11. [Premium Plans and Payments](#-premium-plans-and-payments)
+12. [Deployment (Render)](#-deployment-render)
+13. [Testing](#-testing)
+14. [Security and Privacy](#-security-and-privacy)
+15. [Design Decisions](#-design-decisions)
+16. [Limitations](#-limitations)
+17. [Roadmap](#-roadmap)
+18. [Author](#-author)
 
 ---
 
@@ -59,17 +64,17 @@ It uses **Retrieval-Augmented Generation (RAG)**: instead of asking the model to
 
 ## 🖼 Screenshots
 
-> Add your screenshots to an `assets/screenshots/` folder and uncomment the lines below.
+### Chat with page citations
 
-<!--
-| Chat with citations | Plans page |
-|---|---|
-| ![Chat](assets/screenshots/chat.png) | ![Plans](assets/screenshots/plans.png) |
+![Chat with citations](assets/screenshots/chat.png)
 
-| Checkout | Settings |
-|---|---|
-| ![Checkout](assets/screenshots/checkout.png) | ![Settings](assets/screenshots/settings.png) |
--->
+### Plans page (Free / Pro / Max)
+
+![Plans page](assets/screenshots/plans.png)
+
+### Home screen
+
+![Home screen](assets/screenshots/home.png)
 
 ---
 
